@@ -81,28 +81,28 @@ social:
     username: ""
     url: ""
     desc: Follow me on Twitter
-    share: false
+    share: true
 
   - name: Facebook
     icon: facebook
     username: ""
     url: ""
     desc: Friend me on Facebook
-    share: false
+    share: true
 
   - name: GitHub
     icon: github
     username: noru
     url: https://github.com/junsu1026
     desc: Fork me on GitHub
-    share: false
+    share: true
 
   - name: LinkedIn
     icon: linkedin
     username: ""
     url: ""
     desc: Connect with me on LinkedIn
-    share: false
+    share: true
 
   - name: Google+
     icon: google-plus
@@ -192,12 +192,12 @@ social:
 # These are for automatically generating sharing metadata for FB and Twitter
 # OS Protocol is for sharing the source of your site, if you're interested. For more, see osprotocol.com
 protocols:
-    fb_image: "/assets/logo.png"
+    fb_image: "/assets/2022chamsball.png"
     fb_image_width: 612
     fb_image_height: 605
     fb_image_type: "image/png"
 
-    twitter_image: "/assets/logo.png"
+    twitter_image: "/assets/2022chamsball.png"
 
     os_repo: "https://github.com/bencentra/centrarium.com"
     os_rcs_type: "git"
