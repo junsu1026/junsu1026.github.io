@@ -1,9 +1,11 @@
 ---
 layout: post
-title:  "Spring 아이디 중복검사 기능 구현"
+title:  "Spring Boot 아이디 중복검사 기능 구현"
 date:   2022-01-14T12:25:52-02:00
 author: Junsu Noh
-categories: Dummy
+categories:
+- Dummy
+cover: "/assets/instacode.png"
 ---
 --Spring Boot 회원가입 아이디 중복검사 기능 구현
 ================================================
@@ -22,7 +24,8 @@ categories: Dummy
 
 
 
-```<form>
+```
+<form>
 <h1> 회원등록 </h1>
 이름 <input type="text" name="name"><Br>
 전화번호 <input type="text" name="tel"><Br>
@@ -38,11 +41,9 @@ ID<input type="text" name="post" id="id">
 
 2 받은 아이디를 새로운 jsp로 전달하면서 함수 실행
 
-<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js">
-
-</script>
-
 ```
+<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js">
+</script>
 <script>
       	 function 우편번호조회() {
 	new daum.Postcode({
@@ -58,6 +59,8 @@ ID<input type="text" name="post" id="id">
 	window.open("/id", "", "width=400,height=300");
 	}
 ```
+
+
 
 
 우편번호를 조회하는 함수와 같이 써있으므로
@@ -144,7 +147,6 @@ window.open을 사용해서 새로운 창을 열어준다.
 	}
 ```
 
-
 8 서비스를 거쳐서 컨트롤러에서 ModelAndView 객체에 담은 후 뷰로 데이터를 보내준다
 
 ```
@@ -186,9 +188,9 @@ window.open을 사용해서 새로운 창을 열어준다.
 	  </script>
 ```
 
-```<h1>아이디 중복 검사 </h1>
+```
+	<h1>아이디 중복 검사 </h1>
 	<form action="/id" method="post">
-	
 	ID <input type="text" name="id" id="id" value=""/>
 	<input type="submit" value="검사"><br>
 	</form>
