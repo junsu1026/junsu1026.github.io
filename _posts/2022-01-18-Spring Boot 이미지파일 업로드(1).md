@@ -53,7 +53,7 @@ maven은 spring에 필요한 라이브러리들을 모두 관리해주기 때문
 
 
 
-![](C:\Users\junsu\OneDrive\바탕 화면\이미지 .png)
+![이미지 ](https://raw.githubusercontent.com/junsu1026/junsu1026.github.io/images/assets/img/이미지 .png)
 
 다음과 같은 모양의 폼이 만들어졌다.
 
