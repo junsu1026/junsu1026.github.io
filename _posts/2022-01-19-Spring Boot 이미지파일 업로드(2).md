@@ -51,7 +51,7 @@ File 파일 = new File(절대경로+"upload\\"+파일명);
 
 [경로는 C: 부터 ROOT까지를 복사해서 파일탐색기의 경로에 붙여 넣어주면 폴더로 들어가진다.]
 
-![](C:\Users\nonon\OneDrive\바탕 화면\github\junsu1026.github.io\assets\img\Spring 임시경로.PNG)
+![Spring temporary path](https://raw.githubusercontent.com/junsu1026/junsu1026.github.io/images/assets/img/Spring temporary path.PNG)
 
 폴더를 만들고 다시 실행해보면 위와 같은 500번대 오류는 뜨지 않게 되고 제대로 실행이 가능해진다.  
 
