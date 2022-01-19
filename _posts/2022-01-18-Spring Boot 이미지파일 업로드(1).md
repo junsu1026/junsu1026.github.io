@@ -171,4 +171,6 @@ public MultipartFile getProfilefile() {
 	}
 ```
 
+@ModelAttribute 추가시 controller에서 자동으로 VO객체와 매핑을 해줘서 일일이 하나씩 파라미터를 지정해주지 않아도 된다.
+
 ### 이러한 환경 설정을 해주면 DAO로 보낼 VO가 완성되었다. 나머지는 2에서 다루겠다.
