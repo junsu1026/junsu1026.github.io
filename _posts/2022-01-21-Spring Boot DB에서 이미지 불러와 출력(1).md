@@ -1,14 +1,16 @@
 ---
 layout: post
-title:  "Spring Boot DB에서 이미지 불러와 출력"
+title:  "Spring Boot DB에서 이미지 불러와 출력(1)"
 date:   2022-01-20T21:04:00-05:00
 author: Junsu Noh
 categories: Dummy
+tags:	jekyll welcome
+cover:  "/assets/instacode.png"
 ---
 
 
 
-## Spring Boot DB에서 BLOB 이미지 불러와서 출력하기(mysql)
+## Spring Boot DB에서 BLOB 이미지 불러와서 출력하기(1)(mysql)
 
 
 
@@ -21,6 +23,8 @@ categories: Dummy
 첫번째 : **주소 설정 출력**
 
 두번째 : **라이브러리를 활용한 출력**
+
+이 글은 주소 설정 출력 방법이다.
 
 
 
@@ -36,7 +40,7 @@ View(jsp)에서 이미지 태그안에 들어갈 주소를 설정해줘야 하�
 
 
 
-- 이미지정보를 가져올 컨트롤러를 만들어주자 
+- **1** 이미지정보를 가져올 컨트롤러를 만들어준다. 
 
 ```
 @Controller
@@ -59,7 +63,7 @@ public class 이미지컨트롤러 {
 
 
 
-- DAO로 전달할 서비스를 만들어주자
+- **2** DAO로 전달할 서비스를 만들어주자
 
 ```
 @Service
@@ -78,7 +82,7 @@ public class 이미지관리자 {
 
 
 
-- DAO가 이미지 정보를 가져올 수 있도록 VO를 만들어주자
+- **3** DAO가 이미지 정보를 가져올 수 있도록 VO를 만들어주자
 
 ```
 public class ImageVO {
@@ -123,7 +127,7 @@ public class ImageVO {
 
 
 
-- DB에 저장되어있는 BLOB형태의 이미지 파일을 불러오는 sql문을 사용해서 DAO의 메소드를 통해 데이터를 가져오자
+- **4** DB에 저장되어있는 BLOB형태의 이미지 파일을 불러오는 sql문을 사용해서 DAO의 메소드를 통해 데이터를 가져오자
 
 ```
 @Repository
@@ -157,7 +161,7 @@ public ImageVO 찾다By번호(int no) {
 
 
 
-- 이미지를 출력해줄 View(jsp)를 만들어주자
+- **5** 이미지를 출력해줄 View(jsp)를 만들어주자
 
 ```
 <body>
@@ -171,7 +175,7 @@ Date:${image.rdate }
 
 
 
-- 새로운 컨트롤러를 하나 만들어서 매핑과 이미지 정보를 불러올 메소드를 만들어주자
+- **6** 새로운 컨트롤러를 하나 만들어서 매핑과 이미지 정보를 불러올 메소드를 만들어주자
 
 ```
 @Controller
@@ -194,7 +198,7 @@ public class 이미지프로필 {
 
 
 
-- "imagefile"이라는 jsp를 만들어서 이미지파일 잘 변환해서 불러올 수 있도록 파일을 만들어주자.
+- **7** "imagefile"이라는 jsp를 만들어서 이미지파일 잘 변환해서 불러올 수 있도록 파일을 만들어주자.
 
 ```
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>

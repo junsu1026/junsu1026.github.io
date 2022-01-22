@@ -42,7 +42,7 @@ maven은 spring에 필요한 라이브러리들을 모두 관리해주기 때문
 
 ### form태그를 이용한 업로드 방법
 
-1. 먼저 폼태그를 만들어준다 프로필 src에 들어가 있는 이미지는 파일을 올리기전 이미지파일을 올려둔 것이다. 
+- **1** 먼저 폼태그를 만들어준다 프로필 src에 들어가 있는 이미지는 파일을 올리기전 이미지파일을 올려둔 것이다. 
 
 ```
 <form onsubmit="return 회원등록하다()" action="/member" method="post"> 
@@ -57,7 +57,7 @@ maven은 spring에 필요한 라이브러리들을 모두 관리해주기 때문
 
 다음과 같은 모양의 폼이 만들어졌다.
 
-2. 이미지 파일을 올렸을때 이미지가 미리보기로 보여지도록 세팅한다 (이 부분은 생략가능한 부분이다.)
+- **2** 이미지 파일을 올렸을때 이미지가 미리보기로 보여지도록 세팅한다 (이 부분은 생략가능한 부분이다.)
 
    ```
    <script type="text/javascript">
@@ -111,7 +111,7 @@ maven은 spring에 필요한 라이브러리들을 모두 관리해주기 때문
 
 파일 업로드를 위해서는 라이브러리를 추가해서 하는 방법이 빠르고 쉽다 
 
-1. pom.xml에 라이브러리 추가
+- **1** pom.xml에 라이브러리 추가
 
 ```
 <dependency>
@@ -121,7 +121,7 @@ maven은 spring에 필요한 라이브러리들을 모두 관리해주기 때문
   </dependency>
 ```
 
-2. web.xml에 업로드 경로와 파일 사이즈 설정
+- **2** web.xml에 업로드 경로와 파일 사이즈 설정
 
 ```
 <multipart-config>
@@ -132,7 +132,7 @@ maven은 spring에 필요한 라이브러리들을 모두 관리해주기 때문
 </multipart-config>
 ```
 
-3. form태그에 enctype="multipart/form-data" 추가 
+- **3** form태그에 enctype="multipart/form-data" 추가 
 
 ```
 <form onsubmit="return 회원등록하다()" action="/member" method="post" enctype="multipart/form-data"> 
@@ -140,7 +140,7 @@ maven은 spring에 필요한 라이브러리들을 모두 관리해주기 때문
 
 multipart/form-data는 여러개의 파일을 올리기 쉽게 사용하도록 만들어진 방식으로 post 메소드로만 사용이 가능하다.
 
-4. mvc파일수정 BeanConfig에 multipart 등록
+- **4** mvc파일수정 BeanConfig에 multipart 등록
 
 ```
 @Bean
@@ -149,7 +149,7 @@ multipart/form-data는 여러개의 파일을 올리기 쉽게 사용하도록 �
 	}
 ```
 
-5. VO에 새롭게 올라갈 파일 변수 작성
+- **5** VO에 새롭게 올라갈 파일 변수 작성
 
 ```
 private MultipartFile profilefile;
@@ -161,7 +161,7 @@ public MultipartFile getProfilefile() {
 	}
 ```
 
-6. 컨트롤러에서 작동시킬 함수에 매개변수 어노테이션 추가
+- **6** 컨트롤러에서 작동시킬 함수에 매개변수 어노테이션 추가
 
 ```
 @PostMapping("/member")	
