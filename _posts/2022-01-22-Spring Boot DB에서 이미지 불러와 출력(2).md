@@ -42,7 +42,9 @@ View(jsp)에서 이미지 태그안에 들어갈 주소를 설정해줘야 하�
 
 - 컨트롤러와 서비스 DAO는 이 전 글인 
 
-- https://junsu1026.github.io/dummy/2022/01/21/Spring-Boot-DB%EC%97%90%EC%84%9C-%EC%9D%B4%EB%AF%B8%EC%A7%80-%EB%B6%88%EB%9F%AC%EC%99%80-%EC%B6%9C%EB%A0%A5.html에서 설명해두었다.
+- https://junsu1026.github.io/dummy/2022/01/21/Spring-Boot-DB%EC%97%90%EC%84%9C-%EC%9D%B4%EB%AF%B8%EC%A7%80-%EB%B6%88%EB%9F%AC%EC%99%80-%EC%B6%9C%EB%A0%A5(1).html
+
+  에서 설명해두었다.
 
 - 우선 라이브러리를 pom.xml에 설정해주어야 한다.
 
