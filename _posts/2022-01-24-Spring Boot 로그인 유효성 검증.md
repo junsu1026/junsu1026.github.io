@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Spring Boot 로그인 유효성 검증"
-date:   2022-01-24T16:12:52-02:00
+date:   2022-01-24T12:12:52-02:00
 author: Junsu Noh
 categories: Dummy
 tags:	jekyll welcome
@@ -226,11 +226,7 @@ public class Test회원컨트롤러 {
 
 filter가 서블릿전에 걸러주는 개념이라면 interseptor는 서블릿은 들어오지만 핸들러 앞에서 걸러주는 느낌이다.
 
-
-
-
-
-
+<img src="https://raw.githubusercontent.com/junsu1026/junsu1026.github.io/images/assets/img/Inkedinterseptor_LI.jpg" alt="Inkedinterseptor_LI" style="zoom:67%;" />
 
 - **1** 먼저 로그인이 되어있는지 여부를 확인할 클래스를 만들어 주고 HandlerInterceptorAdapter를 상속받아서 사용하였다.  preHandle을 사용하게 되면 컨트롤러 전에 확인하고 postHandle을 사용하면 컨트롤러 후에 확인하게 된다.
 
