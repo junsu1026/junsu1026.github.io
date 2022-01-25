@@ -1,0 +1,145 @@
+---
+layout: post
+title:  "Spring Boot 로그인 계정과 게시물 연결하기"
+date:   2022-01-24T14:12:52-05:00
+author: Junsu Noh
+categories: Dummy
+tags:	jekyll welcome
+cover:  "/assets/instacode.png"
+
+---
+
+## Spring Boot 로그인 계정과 게시물 연결하기
+
+로그인 계정과 게시물과의 연결고리를 SQL로 연결시켜주어서 로그인한 사용자가 게시물을 올리게되면 외래키를 이용해서 다른 테이블안에 게시물을 저장하는 방법을 사용해 보았다.
+
+만든 파일을 전부다 올리기에는 너무 많은 양이여서 이미 만들어져있는 게시글 프로그램과 로그인 프로그램을 합치는 방향으로 설정하였다. 
+
+
+
+- **1** Mysql을 사용해서 테이블 두 개를 만들고 하나의 primary key를 사용하여 두 테이블을 연결시켜 준다.
+
+```
+CREATE TABLE IF NOT EXISTS `db5`.`member` (
+  `no` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(45) NULL,
+  `id` VARCHAR(45) NOT NULL,
+  `password` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`no`))
+ENGINE = InnoDB;
+
+CREATE TABLE IF NOT EXISTS `db5`.`board` (
+  `no` INT NOT NULL AUTO_INCREMENT,
+  `title` VARCHAR(45) NULL,
+  `contents` VARCHAR(45) NULL,
+  `boardcol` VARCHAR(45) NULL,
+  `writer` INT NOT NULL,
+  PRIMARY KEY (`no`),
+  INDEX `fk_board_member_idx` (`writer` ASC) VISIBLE,
+  CONSTRAINT `fk_board_member`
+    FOREIGN KEY (`writer`)
+    REFERENCES `db5`.`member` (`no`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+
+```
+
+no라는 시퀀스에 의해 연결된 두 테이블을 만들어준다.
+
+
+
+- **2** 로그인을 할 때 session에 시퀀스 값을 저장해준뒤 그 시퀀스값을 가져와서 해당하는 정보를 저장하는 함수를 만들어준다.
+
+```
+@PostMapping("/board")
+	public String 게시물을등록하다(Board 새게시물, HttpSession session) {
+
+		//로그인한 회원의 번호 구해야함 - 로그인 당시 회원번호를 setAttribute 했다는 것을 전제로 할 때
+		int 로그인한회원의번호=(int)session.getAttribute("no");
+		Member 작성한회원 = new Member();
+		//로그인한 회원이 작성자이므로 새게시물에 작성자를 set 해주어야함
+		작성한회원.setNo(로그인한회원의번호);
+		새게시물.setWriter(작성한회원); // 게시물에 대한 VO변수들에 게시물을 쓴 작성자의 정보를 넣어준다.
+		게시물업무자.게시물을등록하다(새게시물); //저장한 VO를 이용해서 게시물을 등록하는 sql을 작동시킨다.
+		return "board/게시물등록알림창";
+		
+	}
+	
+```
+
+주석으로 달아놓긴 했지만 로그인할때 받아온 정보를 사용하여, 로그인한 회원정보와 함께 입력 되어있는 시퀀스 값을 세션에 저장해준다. 
+
+그리고 
+
+게시물을 쓰게되면 받아두었던 시퀀스 값을 사용하여 해당하는 시퀀스를 외래키로 사용하는 테이블에 정보를 저장할 수 있도록 함수를 만들어주고 
+
+저장이 되었다는 말을 전달하는 View(jsp)를 만들어준다.
+
+
+
+- **3** 저장이 되었음을 알려주는 View(jsp)를 만들어준다.
+
+```
+<body>
+<p>게시물이 등록되었습니다.</p>
+//게시물 목록으로 이동해주는 함수를 넣어서 버튼을 활성화시키면 완성이다.
+<button>확인</button>
+</body>
+```
+
+
+
+- **4** 로그인 할 때 회원정보를 가지고 해당하는 시퀀스 값을 가지고 오는 함수를 컨트롤러에 추가시켜 준다.
+
+```
+@PostMapping("/login")
+	public String 로그인하다(String id, String password, HttpSession session) {
+		//로그인 성공시
+		if(로그인아웃업무자.로그인이가능한가(id, password)) {
+			
+			//로그인이 성공했다면 아이디를 사용해서 sql문을 사용해 시퀀스 값을 받아온다.
+			int 회원번호 = 회원업무자.회원번호구해오기(id);
+			//로그인정보 저장
+			session.setAttribute("id", id); 
+			//세션에 sql문을 사용해 가져온 시퀀스 값을 저장해준다.
+			session.setAttribute("no", 회원번호);
+			//메인 페이지로
+			return "redirect:/main";
+		}
+		//로그인 실패시 다시 로그인 페이지
+		return "에러로그인창";		
+	}
+```
+
+
+
+- **5** sql문을 작성해서 시퀀스 값을 받아온다.
+
+```
+public int 회원번호추출(String id) {
+		Connection con = null;	
+		int 추출된회원번호 = 0;
+		try{
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			con=DriverManager.getConnection(DBConfig.DBURL, DBConfig.ID, DBConfig.PASSWORD);        
+			PreparedStatement 명령자=con.prepareStatement("select no from member where id=?");
+			명령자.setString(1, id);
+			ResultSet rs =명령자.executeQuery();
+			if(rs.next()) {
+				추출된회원번호 = rs.getInt(1);
+			}
+			rs.close();
+			con.close();
+		}
+		catch(Exception ex){ ex.printStackTrace(); }
+		return 추출된회원번호;
+	}
+```
+
+
+
+이렇게 해서 로그인할때 받아온 로그인 정보를 사용해서 해당하는 시퀀스 값을 가져와서 세션에 저장해준뒤
+
+두개의 테이블에 각각 회원정보와 연결된 게시물들이 서로 연결될 수 있도록 해주었다. 
+
+지금 이 글을 쓴 것 보다 훨씬 많은 양의 다른 함수들이 존재하지만 너무 길어지기 때문에 생략을 위해서 위와 같이 중요한 내용들만 업로드 하였다.
