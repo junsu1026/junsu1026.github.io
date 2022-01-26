@@ -120,7 +120,7 @@ member테이블의 primary key인 no가 => board의 foreign key 이다.
 
 위 코드는 아래의 화면과 같이 나온다. 
 
-
+<img src="https://raw.githubusercontent.com/junsu1026/junsu1026.github.io/images/assets/img/게시물목록창.PNG" alt="게시물목록창" style="zoom:50%;" />
 
 
 
