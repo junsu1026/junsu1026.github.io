@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Spring Boot 게시물 조회수 올리기"
-date:   2022-01-24T14:25:52-05:00
+date:   2022-01-25T14:25:52-05:00
 author: Junsu Noh
 categories: Dummy
 tags:	jekyll welcome
@@ -122,7 +122,7 @@ member테이블의 primary key인 no가 => board의 foreign key 이다.
 
 
 
-<img src="https://raw.githubusercontent.com/junsu1026/junsu1026.github.io/images/assets/img/게시물목록창.PNG" alt="게시물목록창"  />
+
 
 
 
