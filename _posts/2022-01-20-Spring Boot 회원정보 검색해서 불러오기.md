@@ -3,7 +3,7 @@ layout: post
 title:  "Spring Boot 회원정보 검색해서 불러오기"
 date:   2022-01-19T14:25:52-05:00
 author: Junsu Noh
-categories: Dummy
+categories: Spring
 tags:	jekyll welcome
 cover:  "/assets/instacode.png"
 ---

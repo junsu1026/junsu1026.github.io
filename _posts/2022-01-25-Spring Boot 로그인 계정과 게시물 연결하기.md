@@ -3,7 +3,7 @@ layout: post
 title:  "Spring Boot 로그인 계정과 게시물 연결하기"
 date:   2022-01-24T14:12:52-05:00
 author: Junsu Noh
-categories: Dummy
+categories: Spring
 tags:	jekyll welcome
 cover:  "/assets/instacode.png"
 

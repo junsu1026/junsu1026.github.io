@@ -3,7 +3,7 @@ layout: post
 title:  "Spring Boot 파일 업로드 방법(2)"
 date:   2022-01-18T14:25:52-05:00
 author: Junsu Noh
-categories: Dummy
+categories: Spring
 tags:	jekyll welcome
 cover:  "/assets/instacode.png"
 ---

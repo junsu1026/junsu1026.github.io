@@ -57,8 +57,15 @@ descriptions:
   - cat: jekyll
     desc: "Posts describing Jekyll setup techniques."
 
-  - cat: dummy
-    desc: "Just some placeholder posts, lorem ipsum and the rest."
+  - cat: Spring
+    desc: "Spring Boot에 관한 내용들 입니다."
+  
+  - cat: 백준
+    desc: "백준문제 포스팅입니다."
+
+  - cat: UML
+    desc: "UML 사용방법."
+
 
 # Social icons and sharing options
 #

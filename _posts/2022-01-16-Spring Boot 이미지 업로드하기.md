@@ -4,7 +4,7 @@ title:  "Spring Boot 게시글 이미지 업로드"
 date:   2022-01-16T16:10:52-05:00
 author: Junsu Noh
 categories:
-- Dummy
+- Spring
 tags: jekyll welcome
 cover: "/assets/instacode.png"
 ---

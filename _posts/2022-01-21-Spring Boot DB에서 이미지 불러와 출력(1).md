@@ -3,7 +3,7 @@ layout: post
 title:  "Spring Boot DB에서 이미지 불러와 출력(1)"
 date:   2022-01-20T21:04:00-05:00
 author: Junsu Noh
-categories: Dummy
+categories: Spring
 tags:	jekyll welcome
 cover:  "/assets/instacode.png"
 ---

@@ -3,7 +3,7 @@ layout: post
 title:  "Spring Boot 로그인 유효성 검증"
 date:   2022-01-23T12:12:52-02:00
 author: Junsu Noh
-categories: Dummy
+categories: Spring
 tags:	jekyll welcome
 cover:  "/assets/instacode.png"
 ---

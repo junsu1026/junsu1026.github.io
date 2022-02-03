@@ -3,7 +3,7 @@ layout: post
 title:  "Spring Boot 게시물 조회수 올리기"
 date:   2022-01-25T14:25:52-05:00
 author: Junsu Noh
-categories: Dummy
+categories: Spring
 tags:	jekyll welcome
 cover:  "/assets/instacode.png"
 ---

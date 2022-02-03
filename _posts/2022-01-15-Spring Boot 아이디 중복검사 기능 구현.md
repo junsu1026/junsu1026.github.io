@@ -4,7 +4,7 @@ title:  "Spring Boot 아이디 중복검사 기능 구현"
 date:   2022-01-14T12:25:52-02:00
 author: Junsu Noh
 categories:
-- Dummy
+- Spring
 cover: "/assets/instacode.png"
 ---
 --Spring Boot 회원가입 아이디 중복검사 기능 구현
