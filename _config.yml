@@ -55,10 +55,10 @@ jekyll-archives:
 # Category descriptions (for archive pages)
 descriptions:
   - cat: jekyll
-    desc: ""
+    desc: 
 
   - cat: Spring
-    desc: ""
+    desc: 
 
   - cat:
     desc: 
@@ -66,7 +66,7 @@ descriptions:
   - cat:
     desc: 
 
-  - cat: Spring
+  - cat:
     desc: 
 
 
