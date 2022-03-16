@@ -3,7 +3,7 @@ layout: post
 title:  "JavaScript CallBack Function(콜백함수)"
 date:   2022-03-14T14:12:52-05:00
 author: Junsu Noh
-categories: 백준
+categories: JavaScript
 tags:	jekyll welcome
 cover:  "/assets/instacode.png" 
 ---
