@@ -1,0 +1,27 @@
+---
+layout: post
+title:  "프로그래머스 77487번 문제 MYSQL"
+date:   2022-04-01T14:12:52-05:00
+author: Junsu Noh
+categories: 프로그래머스
+tags:	jekyll welcome
+cover:  "/assets/instacode.png" 
+---
+
+## 프로그래머스 77487번 문제 MYSQL
+
+subquery를 사용한 문제다.
+group by와 having을 사용한 조건문을 만들어보자
+
+
+
+
+```
+SELECT * from PLACES 
+where HOST_ID 
+in (select HOST_ID 
+from PLACES 
+group by HOST_ID 
+having count(HOST_ID) > 1)
+```
+
