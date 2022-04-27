@@ -1,3 +1,18 @@
+---
+layout: post
+title:  "ETL의 이해(1)"
+date:   2022-04-26T14:12:52-05:00
+author: Junsu Noh
+categories: BigData
+tags:	jekyll welcome
+cover:  "/assets/instacode.png" 
+---
+
+## ETL의 이해(1)
+
+그저 제가 기억을 위해서 생각나는 대로 적어서 순서가 뒤죽박죽인점 양해 부탁드립니다.
+
+
 WORKFLOW : 작업의 흐름(순서)를 지정하거나 혹은 해서 일어나는 작업들의 일련의 작업도
 
 데이터를 처음 넣을때는 Initial 작업 -> 그 이후 데이터는 incremental 작업 cdc를 사용해서 변경되는 데이터를 확인
