@@ -1,0 +1,65 @@
+WORKFLOW : 작업의 흐름(순서)를 지정하거나 혹은 해서 일어나는 작업들의 일련의 작업도
+
+데이터를 처음 넣을때는 Initial 작업 -> 그 이후 데이터는 incremental 작업 cdc를 사용해서 변경되는 데이터를 확인
+
+CDC(Change Data Capture) : db에서 변경된 데이터를 알아내고 후속처리를 자동화하는 기술
+
+S(source) -> T(target) 으로 파일을 로딩하는 방법
+데이터 로딩의 방법 :
+                    1. Truncate & Insert (TI)
+                    2. Insert (I)
+                    3. Update & Insert (UI)
+                    4. Delete & Insert (DI)
+
+
+OLAP의 종류 
+
+MOLAP : 비관계형OLAP, 미리 CUBE라는 것을 만들어서 결과를 만들어두고 작업을 하는 것이라 속도가 빠름 하지만 수정을 하거나 추가,삭제를 할때 CUBE를 재구성 해야 하기 때문에 변화되지 않는 데이터에 용이함. 
+CUBE 생성 후 일어나는 작업에 대한 비용이 너무 많이 발생함. 2000년대 초반에는 많이 사용되었다.
+
+ROLAP : 관계형OLAP, 결과를 만들지 않고 그때그때 쿼리를 날려서 데이터를 뽑아내는 방식이라 대용량 데이터 접근에 용이함.
+하드웨어나 CPU의 능력이 중요함 IT의 발전 때문에 최근에 많이 사용됨
+
+HOLAP : 하이브리드 방식 (이론상으론 좋지만 사용하기에는 한계가 있기 때문에 잘 사용하지 않음)
+
+OLAP TOOL : 
+            Cognos : 기존 ROLAP의 선두주자 가장 유명하고 많이 사용되다가 MOLAP이 많이 사용되자 MOLAP도 지원하게 됨
+            MSTR : MOLAP를 주력으로 하는 TOOL 하지만 ROLAP도 지원함
+            Tableau : 떠오르는 신흥 강자
+
+
+Operational Systems(원천) -> Integration Layer -> D.W -> D.M
+
+Operational Systems(원천) :
+         OLTP에서 원천자료를 수집
+
+Integration Layer : Small Data
+         ODS(Operational Data Store)로 데이터를 정형화 
+         (아직 데이터를 사용 불가능)
+         I.L이 곧 ODS 
+         휘발성으로 계속해서 업데이트하면서 정보들을 가져온다. 현재 -> 최신
+
+D.W(Data Warehouse) : Big Data
+         ODS에서 정제된 데이터를 활용가능하도록 관리, 분산할 수 있게 해주는 시스템
+         (분석가능)
+         데이터를 계속 쌓아두기 때문에 오래된 데이터부터 현재데이터까지 모두 다 있다. 즉, 비휘발성 절대 없어지지 않음
+
+D.M(Data Market) : 
+         정제되고 사용할 수 있는 데이터들을 모아둔 곳
+
+DW구축 단계
+1. DW를 모델링 해야한다. 어떻게 만들건지 큰 테두리 생성
+2. ETL (Legacy -> DW) OLTP(운영계)에서 수집된 데이터를 ODS와 DW로 정제한다.
+3. 그 데이터들을 받아줄 D.M을 모델링 해줘야 한다. 어떻게 데이터들을 정리해서 모아둘건지
+4. ETL (ODS/DW -> D.M) OLAP에 모인 데이터들을 사용하기 좋게 정제해서 DM에 저장해야한다.
+5. DW에서 ROLAP를 구축 
+6. DM에서 MOLAP를 구축 
+7. DW 운영 시작
+
+DW 구축 방법
+1. TOP-DOWN 방식 : DW를 한번에 구축 -> 시간/비용 많은 소비
+2. BOTTOM-UP 방식 : DM 구축 후 DW 구축 -> 통합에 힘을 많이 들임
+3. HYBRID 방식 : DW,DM을 병행 구축 -> 인력 분산 가능, 위험 하락
+
+출처 : 
+https://yannichoongs.tistory.com/232 
