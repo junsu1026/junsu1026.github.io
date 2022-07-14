@@ -13,6 +13,12 @@ cover:  "/assets/instacode.png"
 하나의 데이터베이스를 가지고 작업을 하다보니 Lock이 걸려 작업을 할 수 없는 경우가 발생했다. 
 이론으로 아는 것보다 실제로 겪으니 생각보다 난처했고 해결방법을 빠르게 찾아야 했다.
 
+## Basic 
+
+명령어를 실행하면, 이후 실행하는 SQL명령문은 transaction으로 묶이게 되어 commit또는 rollback을 하게 될 때 까지 DB에 반영되지 않습니다. 
+Postgresql에서는 pg_catalog라는 스키마에 다양한 메타정보를 관리합니다. 
+그 중 pg_locks view는 database server에 현재 transaction에서 잡혀있는 lock에 대한 정보를 제공해줍니다.
+
 ## LOCK
 Lock은 transaction과 너무 연관이 깊다. 
 데이터베이스의 동시성과 일관성을 위해서 Lock은 꼭 필요했다.
@@ -33,6 +39,17 @@ Lock에는 크게 두가지가 존재하는데
 일반적으로 테이블에 변경사항이 생길때 발생하며 Share lock, Exclusive lock과 충돌합니다.
 
 
+  SELECT  t.relname,
+        l.locktype,
+        page,
+        virtualtransaction,
+        pid,
+        mode,
+        granted
+FROM pg_locks l,
+	 pg_stat_all_tables t
+WHERE l.relation = t.relid
+ORDER BY relation ASC;
 
 
 
