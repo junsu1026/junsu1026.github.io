@@ -41,14 +41,14 @@ Lock에는 크게 두가지가 존재하는데
 
 
 
-   SELECT  t.relname,
+    SELECT  t.relname,
         l.locktype,
         page,
         virtualtransaction,
         pid,
         mode,
         granted
-   FROM pg_locks l,
-	 pg_stat_all_tables t
-   WHERE l.relation = t.relid
-   ORDER BY relation ASC;
+    FROM pg_locks l,
+	  pg_stat_all_tables t
+    WHERE l.relation = t.relid
+    ORDER BY relation ASC;
