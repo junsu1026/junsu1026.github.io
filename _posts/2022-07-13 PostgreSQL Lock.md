@@ -3,7 +3,7 @@ layout: post
 title:  "PostgreSQL Lock 정리"
 date:   2022-07-12T14:12:52-05:00
 author: Junsu Noh
-categories: computer
+categories: PostgreSQL
 tags:	jekyll welcome
 cover:  "/assets/instacode.png" 
 ---
