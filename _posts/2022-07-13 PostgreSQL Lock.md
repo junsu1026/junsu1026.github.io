@@ -39,17 +39,16 @@ Lock에는 크게 두가지가 존재하는데
 일반적으로 테이블에 변경사항이 생길때 발생하며 Share lock, Exclusive lock과 충돌합니다.
 
 
-  SELECT  t.relname,
+
+
+   SELECT  t.relname,
         l.locktype,
         page,
         virtualtransaction,
         pid,
         mode,
         granted
-FROM pg_locks l,
+   FROM pg_locks l,
 	 pg_stat_all_tables t
-WHERE l.relation = t.relid
-ORDER BY relation ASC;
-
-
-
+   WHERE l.relation = t.relid
+   ORDER BY relation ASC;
