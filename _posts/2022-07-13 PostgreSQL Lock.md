@@ -100,3 +100,20 @@ MVCC는 동시 접근을 허용하는 데이터베이스에서 동시성을 제�
 > 격리성에 관한 자료
 > 
 [Transaction과 Isolation Level](https://scorpio-mercury.tistory.com/33?category=388494)
+
+
+## PostgreSQL의 MVCC 작동방식
+
+## 데이터베이스 내에 다중 버전의 데이터를 저장(MGA)
+
+PostgreSQL, Interbase, SQL Server에서 사용하는 방식이다.
+
+데이터베이스 내에 다중 버전의 데이터를 저장하다가, 더 이상 필요하지 않을 때 데이터를 정리한다.
+
+데이터베이스 내에 다중 버전의 데이터가 저장되기 때문에, 파일 사이즈가 증가한다.
+
+![https://media.vlpt.us/images/yangsijun528/post/4bfd81a2-2e77-463e-b549-34bf6baaa68f/image.png](https://media.vlpt.us/images/yangsijun528/post/4bfd81a2-2e77-463e-b549-34bf6baaa68f/image.png)
+
+너무 많은 버전이 생기면 부하가 올 수 있기 때문에 Vacuum을 해줘야한다.
+
+
