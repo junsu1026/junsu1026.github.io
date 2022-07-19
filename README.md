@@ -1,3 +1,8 @@
+https://www.notion.so/junsu1026/PostgreSQL-Lock-39f4beef221045db83d82755f6e3e489
+내 노션 링크
+
+
+
 # Centrarium [![Circle CI](https://circleci.com/gh/bencentra/centrarium/tree/master.svg?style=svg)](https://circleci.com/gh/bencentra/centrarium/tree/master)
 
 A simple yet classy theme for your Jekyll website or blog. Customizable to fit your style or brand.
