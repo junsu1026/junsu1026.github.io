@@ -32,16 +32,26 @@ cover:  "/assets/instacode.png"
 
 4개의 영역으로 나뉘어서 API가 개발중이다.
 
-| 웹에서 스팸 및 사기 방지 | 관련 콘텐츠 및 광고 표시 | 디지털 광고 측정 | 사이트 간 프라이버시 경계 
-강화 |
-| --- | --- | --- | --- |
-| Trust Tokens API | FLoC API
+### 웹에서 스팸 및 사기 방지
+
+Trust Tokens API
+### 관련 콘텐츠 및 광고 표시 
+
+FLoC API
 Topics API
-FLEDGE API | Attribution Reporting API | First-Party Sets API
+### 디지털 광고 측정 
+
+FLEDGE API
+Attribution Reporting API
+First-Party Sets API
+### 사이트 간 프라이버시 경계 강화 
+
 Shared Storage API
 CHIPS API
 Fenced Frames API
-Federated Credential Management API |
+Federated Credential Management API 
+
+-----------------------------------------------------
 
 현재 많은 API를 오픈해서 개발중이며 계속해서 API들이 나오고 있고 
 
