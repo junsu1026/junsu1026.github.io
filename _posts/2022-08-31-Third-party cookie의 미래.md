@@ -1,9 +1,12 @@
-
-
-
-
-
-
+---
+layout: post
+title:  "Third-party cookie의 미래"
+date:   2022-08-30T14:25:52-05:00
+author: Junsu Noh
+categories: Chrome
+tags:	jekyll welcome
+cover:  "/assets/instacode.png"
+---
 
 
 ## Privacy Sandbox 프로젝트의 탄생
@@ -13,7 +16,7 @@
 
 </aside>
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f8a7b2b1-021f-4cf3-af8c-4ec9f9970c12/Untitled.png)
+![Untitled (3)](https://user-images.githubusercontent.com/90672736/187618637-9aa6dadc-a1c5-48fe-af7b-5174631abde3.png)
 
 ### Privacy Sandbox의 목표
 
@@ -25,7 +28,7 @@
 
 </aside>
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e94dbc29-f352-4475-b882-d43c95da44e4/Untitled.png)
+![Untitled (4)](https://user-images.githubusercontent.com/90672736/187618596-593b8d9e-dde5-4159-9bb2-2c378b55c0ac.png)
 
 4개의 영역으로 나뉘어서 API가 개발중이다.
 
