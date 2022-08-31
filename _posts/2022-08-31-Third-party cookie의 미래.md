@@ -38,17 +38,23 @@ Trust Tokens API
 ### 관련 콘텐츠 및 광고 표시 
 
 FLoC API
+
 Topics API
 ### 디지털 광고 측정 
 
 FLEDGE API
+
 Attribution Reporting API
+
 First-Party Sets API
 ### 사이트 간 프라이버시 경계 강화 
 
 Shared Storage API
+
 CHIPS API
+
 Fenced Frames API
+
 Federated Credential Management API 
 
 -----------------------------------------------------
